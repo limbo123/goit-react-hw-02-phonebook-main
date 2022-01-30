@@ -15,7 +15,7 @@ const ContactList = ({ contacts, onDelete }) => {
               name={contact.name}
               number={contact.number}
               id={contact.id}
-              onDelete={onDelete}
+              onDelete={() => onDelete(contact.id)}
             />
           );
         })}
