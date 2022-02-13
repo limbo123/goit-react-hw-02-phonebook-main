@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import shortid from "shortid";
 
 import Contact from "../Contact/Contact";
 
@@ -11,10 +10,9 @@ const ContactList = ({ contacts, onDelete }) => {
         {contacts.map((contact) => {
           return (
             <Contact
-              key={shortid.generate()}
+              key={contact.id}
               name={contact.name}
               number={contact.number}
-              id={contact.id}
               onDelete={() => onDelete(contact.id)}
             />
           );

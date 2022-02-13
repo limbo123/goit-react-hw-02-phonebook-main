@@ -18,10 +18,12 @@ class App extends React.Component {
 
   createForm = (name, number) => {
     if (
-      this.state.contacts.every((el) => {
-        return el.name !== name;
+      this.state.contacts.find((el) => {
+        return el.name === name;
       })
     ) {
+      alert(`${name} is already in contacts`);
+    } else {
       const contact = {
         name,
         number,
@@ -33,8 +35,6 @@ class App extends React.Component {
           contacts: [contact, ...prevState.contacts],
         };
       });
-    } else {
-      alert(`${name} is already in contacts`);
     }
   };
 
